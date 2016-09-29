@@ -17,7 +17,6 @@ export class HeaderComponent implements OnInit, AfterViewInit  {
 	ngAfterViewInit() {
 		$(function() {
 			$(".button-collapse").sideNav();
-			$(".dropdown-button").dropdown({ hover: false });
 		});	
   	}
 

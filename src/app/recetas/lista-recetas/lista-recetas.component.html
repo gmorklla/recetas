@@ -1,8 +1,7 @@
 <div class="row">
     <div class="col s12 m12">
     	<ul class="collection">
-    		<li><rb-receta [receta]="receta"></rb-receta></li>
-    		<li><rb-receta [receta]="receta"></rb-receta></li>
+    		<li><rb-receta [receta]="receta" (click)="onSelected(receta)"></rb-receta></li>
     	</ul>
     </div>
 </div>

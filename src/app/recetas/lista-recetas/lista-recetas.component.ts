@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, EventEmitter, Output } from '@angular/core';
 import { Receta } from '../receta';
 
 @Component({
@@ -9,11 +9,16 @@ import { Receta } from '../receta';
 export class ListaRecetasComponent implements OnInit {
 
 	recetas: Receta[] = [];
-	receta = new Receta('Dummy', 'Dummy', 'https://www.bobevans.com/_/media/bobevans_com/images/our-recipes-and-grocery/recipes/recipes-2nd-release/recipedetail_asianmaplemeatballs.jpg');
+  @Output() recetaSeleccionadaEvent = new EventEmitter<Receta>();
+	receta = new Receta('Titulo', 'Descripción', 'https://www.bobevans.com/_/media/bobevans_com/images/our-recipes-and-grocery/recipes/recipes-2nd-release/recipedetail_asianmaplemeatballs.jpg');
 
   constructor() { }
 
   ngOnInit() {
+  }
+
+  onSelected(receta: Receta) {
+  	this.recetaSeleccionadaEvent.emit(receta);
   }
 
 }
